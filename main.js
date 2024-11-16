@@ -101,7 +101,7 @@ const loadExtensions = async (extensionUrls) => {
 
 // Function to load and set up blocking with caching
 const setupBlocking = async () => {
-  const cachePath = path.join(__dirname, 'engine.bin'); // Root app directory
+  const cachePath = path.join(app.getPath('userData'), 'engine.bin');; // Root app directory
   
   const blocker = await ElectronBlocker.fromLists(fetch, [
     // UBlock Origin filters
@@ -130,7 +130,7 @@ const setupBlocking = async () => {
   blocker.enableBlockingInSession(session.defaultSession);
 };
 
-const cookiesFilePath = path.join(__dirname, 'cookies.json');
+const cookiesFilePath = path.join(app.getPath('userData'), 'cookies.json');
 
 // Function to dump cookies to a file
 const dumpCookies = async () => {
@@ -241,6 +241,7 @@ async function createMainWindow() {
     
 	// Load cookies before loading the URL
     await loadCookies();
+
     
 	// Load YouTube
     console.log('Loading YouTube...');
@@ -269,7 +270,6 @@ if (!gotTheLock) {
     app.whenReady().then(async () => {
         await setupBlocking();
         await createMainWindow();
-        await initializeApp();
 
         app.on('activate', () => {
             if (BrowserWindow.getAllWindows().length === 0) createMainWindow();
@@ -277,6 +277,10 @@ if (!gotTheLock) {
     });
 
     app.on('window-all-closed', () => {
-        if (process.platform !== 'darwin') app.quit();
+        // Ensure asynchronous tasks are handled correctly
+        (async () => {
+            await dumpCookies(); // Ensure dumpCookies is defined elsewhere
+            if (process.platform !== 'darwin') app.quit();
+        })();
     });
 }
