@@ -1,0 +1,57 @@
+{
+  "name": "youtube_desktop",
+  "version": "1.0.0",
+  "description": "A lightweight YouTube desktop application with Ublock Origin, Sponsorblock and Return Youtube Dislike built-in",
+  "main": "main.js",
+  "author": "Smealm",
+  "license": "MIT",
+  "keywords": [
+    "youtube",
+    "desktop",
+    "electron",
+    "adblock",
+    "custom"
+  ],
+  "scripts": {
+    "start": "npx electron .",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "@ghostery/adblocker-electron": "^2.0.4",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.7.7",
+    "cross-fetch": "^4.0.0",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^3.3.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+	"electron": "^33.2.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.smealm.youtube_electron",
+    "productName": "YouTube Desktop",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "assets/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon/256x256.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon/256x256.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon/256x256.png"
+    }
+  }
+}
