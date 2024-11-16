@@ -51,5 +51,4 @@ Peter Lowe:    [Ad and tracking server list](https://pgl.yoyo.org/adservers/serv
 
 MD5 Checksums
 
-Setup = 313921843c45b4af938cbb3b2a155383
-Portable = 89e350b91a47b9a86df0a908a7e2ef3d
+In releases page
