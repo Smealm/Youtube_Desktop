@@ -18,7 +18,7 @@ Could theoretically be compiled to any major operating system including Linux an
 simply install Node.js on your prefered OS, clone the repo and run `NPM run build` (to build app) or `NPM Start` in project directory (to run app locally without building)
 
 # MASSIVE WARNING: 
-As of update 1.1.0 cookies are stored in `AppData\Roaming\youtube_desktop` in a plain text JSON file. **THIS IS A MASSIVE SECURITY ISSUE AND COULD COMPROMISE ANY ACCOUNT YOUR LOGIN INTO IN THIS APP**, this is github so ofc anyone is welcome to fork this app and add encryption to it, i have absolutely no idea how to do that so i couldn't add it myself.
+As of update 1.1.0 cookies are stored in `AppData\Roaming\youtube_desktop` in a plain text JSON file. **THIS IS A MASSIVE SECURITY ISSUE AND COULD COMPROMISE ANY ACCOUNT YOU LOGIN INTO WITH**, this is github so ofc anyone is welcome to fork this app and add encryption to it, i have absolutely no idea how to do that so i couldn't add it myself.
 
 ---
 
