@@ -22,7 +22,7 @@ As of update 1.1.0 cookies are stored in `AppData\Roaming\youtube_desktop` in a 
 
 # KNOWN ISSUES
 the filterlist cache doesn't clear itself every day like it's supposed to leading to YouTube telling you to disable adblocker (this is bypassed in the updated filterlists but the app still uses the cached filters which are outdated)
-you can flush the cache yourself by going into `AppData\Roaming\youtube_desktop` and deleting 'engine.bin' which is the cache file
+you can flush the cache yourself by going into `AppData\Roaming\youtube_desktop` and deleting the 'cache' folder which contains the cache files, after doing this the app will automatically refresh the filterlist with the latest filters.
 
 ---
 
