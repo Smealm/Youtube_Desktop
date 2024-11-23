@@ -20,6 +20,10 @@ simply install Node.js on your prefered OS, clone the repo and run `NPM run buil
 # MASSIVE WARNING: 
 As of update 1.1.0 cookies are stored in `AppData\Roaming\youtube_desktop` in a plain text JSON file. if anyone ever gets access to your computer they can locate this file and gain access to your youtube account without needing your email or password, this is github so ofc anyone is welcome to fork this app and add encryption to it, i have absolutely no idea how to do that so i couldn't add it myself.
 
+# KNOWN ISSUES
+the filterlist cache doesn't clear itself every day like it's supposed to leading to YouTube telling you to disable adblocker (this is bypassed in the updated filterlists but the app still uses the cached filters which are outdated)
+you can flush the cache yourself by going into `AppData\Roaming\youtube_desktop` and deleting 'engine.bin' which is the cache file
+
 ---
 
 # Credits
